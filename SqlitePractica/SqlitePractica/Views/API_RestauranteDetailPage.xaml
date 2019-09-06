@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqlitePractica.Views.API_RestauranteDetailPage"
+             Title="{Binding nombre}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="{Binding imgLogo,StringFormat='http://imagenes.somee.com/Uploads/{0}'}"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               HeightRequest="35"
+                                               Grid.Column="0"
+                                               Grid.Row="0"
+                                               Grid.RowSpan="2"
+                                               />
+                <Label Text="{Binding nombre}"
+                                               FontAttributes="Bold"
+                                               FontSize="16"
+                                               HorizontalOptions="Start"
+                                               Grid.Column="1"
+                                               Grid.ColumnSpan="4"
+                                               Grid.Row="0"/>
+                <Label Text="{Binding descp}"
+                                               FontSize="10"
+                                               HorizontalOptions="Start"
+                                               Grid.Column="1"
+                                               Grid.ColumnSpan="4"
+                                               Grid.Row="1"/>
+
+                <ImageButton Source="whitehearth.png"
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center"
+                                             HeightRequest="20"
+                                             Grid.Column="5"
+                                             Grid.Row="0"
+                                             Grid.RowSpan="2"
+                                             x:Name="FavBtn"
+                                             BackgroundColor="Transparent"
+                                               />
+            </Grid>
+
+            <StackLayout>
+                <Frame CornerRadius="20" HeightRequest="200" HorizontalOptions="Fill" Padding="0">
+                    <Image Source="{Binding imgLaye,StringFormat='http://imagenes.somee.com/Uploads/{0}'}" Aspect="AspectFill" />
+                </Frame>
+                <Grid HeightRequest="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="{Binding horaE}"
+                                               FontAttributes="Bold"
+                                               FontSize="10"
+                                               HorizontalOptions="End"
+                                               Grid.Column="0"
+                                               Grid.ColumnSpan="3"
+                                               Grid.Row="0"/>
+                    <Label Text="{Binding horaS}"
+                                               FontAttributes="Bold"
+                                               FontSize="10"
+                                               HorizontalOptions="Start"
+                                               Grid.Column="4"
+                                               Grid.ColumnSpan="3"
+                                               Grid.Row="0"/>
+                    <Label Text="{Binding rating}"
+                                               FontAttributes="Bold"
+                                               FontSize="10"
+                                               HorizontalOptions="Start"
+                                               Grid.Column="8"
+                                               Grid.ColumnSpan="3"
+                                               Grid.Row="0"/>
+
+                </Grid>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

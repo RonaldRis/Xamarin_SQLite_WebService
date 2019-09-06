@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqlitePractica.Views.SQLiteAgregarProducto"
+			 Title="Agregar"
+             >
+    
+    <ContentPage.Content>
+		<ScrollView>
+			<StackLayout Padding="8">
+                <Frame CornerRadius="25" BackgroundColor="#EEFFEE">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="150"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75" ></ColumnDefinition>
+                            <ColumnDefinition Width="*" ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label
+						    Text="Producto"
+                            TextColor="Black"
+						    FontAttributes="Bold"
+						    VerticalOptions="Center"
+						    Grid.Row="0"
+						    Grid.Column="0"
+					    />
+                        <Entry
+						    Placeholder="Monitos 20 pulgada"	
+						    x:Name="txtNombre"
+						    Grid.Row="0"
+						    Grid.Column="1"
+					    />
+                        <Label
+						    Text="Precio $"
+                            TextColor="Black"
+						    FontAttributes="Bold"
+						    VerticalOptions="Center"
+						    Grid.Row="1"
+						    Grid.Column="0"
+					    />
+                        <Entry
+						    Placeholder="$ 55.99"	
+						    Keyboard="Numeric"
+						    x:Name="txtPrecio"
+						    Grid.Row="1"
+						    Grid.Column="1"
+					    />
+                        <Label
+						    Text="Descripción"
+                            TextColor="Black"
+						    FontAttributes="Bold"
+						    VerticalOptions="Center"
+						    Grid.Row="2"
+						    Grid.Column="0"
+					    />
+                        <Editor
+                            Placeholder="Pantalla 4k, con ..."
+						    x:Name="txtDescripcion"
+						    Grid.Row="2"
+						    Grid.Column="1"
+						    HeightRequest="150"
+					    />
+                    </Grid>
+                </Frame>
+                <Button
+					Text="Agregar Producto"	
+					Clicked="Button_Clicked"
+                    TextColor="White"
+                    CornerRadius="25"
+                    BackgroundColor="{StaticResource colorPrimaryDark}"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Grid.Column="1"
+                    Grid.Row="1"
+				/>
+                
+            </StackLayout>
+		</ScrollView>
+    </ContentPage.Content>
+</ContentPage>

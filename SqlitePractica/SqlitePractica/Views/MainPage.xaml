@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SqlitePractica"
+             x:Class="SqlitePractica.MainPage"
+			 xmlns:pg="clr-namespace:SqlitePractica.Views"
+             NavigationPage.HasNavigationBar="False"
+			>
+
+    <TabbedPage
+        Title="SQLite">
+        <pg:SQLiteAgregarProducto/>
+        <pg:SQLite_ListaProducto/>
+    </TabbedPage>
+
+
+    <TabbedPage
+        Title="Web Service">
+        <pg:API_RestaurantesOriginal/>
+        <pg:API_AgregarMostrarUsuarios/>
+    </TabbedPage>
+
+</TabbedPage>

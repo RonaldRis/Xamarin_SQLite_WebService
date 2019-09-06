@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqlitePractica.Views.API_AgregarMostrarUsuarios"
+             Title="Usuarios"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="25" BackgroundColor="#EEFFEE">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75" ></ColumnDefinition>
+                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label
+						    Text="Nombre"
+                            TextColor="Black"
+						    FontAttributes="Bold"
+						    VerticalOptions="Center"
+						    Grid.Row="0"
+						    Grid.Column="0"
+					    />
+                    <Entry
+						    Placeholder="Ronald"	
+						    x:Name="txtNombre"
+						    Grid.Row="0"
+						    Grid.Column="1"
+					    />
+                    <Label
+						    Text="Telefono"
+                            TextColor="Black"
+						    FontAttributes="Bold"
+						    VerticalOptions="Center"
+						    Grid.Row="1"
+						    Grid.Column="0"
+					    />
+                    <Entry
+						    Placeholder="24252526"	
+						    Keyboard="Numeric"
+						    x:Name="txtNum"
+						    Grid.Row="1"
+						    Grid.Column="1"
+					    />
+                   
+                </Grid>
+            </Frame>
+            <Button
+					Text="Guardar usuario"	
+					Clicked="Button_Clicked"
+                    TextColor="White"
+                    CornerRadius="25"
+                    BackgroundColor="{StaticResource colorPrimaryDark}"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Grid.Column="1"
+                    Grid.Row="1"
+				/>
+            <StackLayout Padding="12">
+                <ListView 
+                
+                    x:Name="ItemsListView"
+                    ItemsSource="{Binding Items}"
+                    VerticalOptions="FillAndExpand"
+                    HasUnevenRows="True" 
+                    RefreshCommand="{Binding LoadItemsCommand}"
+                    IsPullToRefreshEnabled="True"
+                    IsRefreshing="{Binding IsBusy,Mode=OneWay}"
+                    >
+                    <!--HasUnevenRows Para filas de distintos tama;os-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding nombre,StringFormat='Nombre: {0}'}"
+                                           FontSize="Medium"/>
+                                    <Label Text="{Binding NumTelefono,StringFormat='Telefono: {0}'}" 
+                                           FontSize="Body"/>
+                                </StackLayout>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

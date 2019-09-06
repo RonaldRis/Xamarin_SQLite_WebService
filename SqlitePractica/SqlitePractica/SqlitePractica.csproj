@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.673156" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\API_AgregarMostrarUsuarios.xaml.cs">
+      <DependentUpon>API_AgregarMostrarUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\API_RestaurantesOriginal.xaml.cs">
+      <DependentUpon>API_RestaurantesOriginal.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SQLite_ListaProducto.xaml.cs">
+      <DependentUpon>SQLite_ListaProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SQLiteAgregarProducto.xaml.cs">
+      <DependentUpon>SQLiteAgregarProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\API_RestauranteDetailPage.xaml.cs">
+      <DependentUpon>API_RestauranteDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SQLiteActualizarProducto.xaml.cs">
+      <DependentUpon>SQLiteActualizarProducto.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\SQLiteActualizarProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\API_AgregarMostrarUsuarios.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SQLiteAgregarProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SQLite_ListaProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\API_RestauranteDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\API_RestaurantesOriginal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

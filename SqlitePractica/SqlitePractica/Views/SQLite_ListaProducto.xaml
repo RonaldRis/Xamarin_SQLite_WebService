@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqlitePractica.Views.SQLite_ListaProducto"
+			 Title="Productos">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+			<ListView x:Name="LP" 
+                      IsPullToRefreshEnabled="True" 
+                      Refreshing="LP_Refreshing" 
+                      ItemTapped="LP_ItemTapped"
+                      HasUnevenRows="True"
+                      >
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="iconPassword.png" HeightRequest="32" WidthRequest="32"
+                                       Margin="15"/>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
+                                    <Label Text="{Binding Nombre,StringFormat='Producto: {0}'}" FontSize="Medium"
+                                           TextColor="Black" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Precio,StringFormat='Precio:  $ {0:N2}'}"  FontSize="Body"/>
+                                    <Label Text="{Binding Descripcion,StringFormat='Descripción:  {0}'}" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+        </StackLayout>
+		
+    </ContentPage.Content>
+</ContentPage>
