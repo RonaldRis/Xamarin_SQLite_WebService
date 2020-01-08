@@ -12,12 +12,18 @@ namespace SqlitePractica.Models
 
         public ProductoDBContext()
         {
-            String DBName = "dbProducto.db3";
-            String sqlitePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DBName);
-        
+            String DBname = "dbProducto.db3";
+            
+            string _Path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            if (Xamarin.Forms.Device.iOS == Xamarin.Forms.Device.RuntimePlatform)
+            {
+                _Path = Path.Combine(_Path, "..", "Library");
+            }
+            _Path = Path.Combine(_Path, DBname);
+            
             try
             {
-                this.connection = new SQLiteAsyncConnection(sqlitePath);
+                this.connection = new SQLiteAsyncConnection(_Path);
                 this.connection.CreateTableAsync<Producto>().Wait();
             }
             catch (Exception e)
